@@ -190,7 +190,7 @@ function App() {
                 </button>
               </div>
             </div>
-            <div className="mr-10"><img className="h-auto w-auto object-cover ..." src="src\assets\Your paragraph text (1).jpg" /> </div>
+            <div className="mr-10"><img className="h-auto w-auto object-cover ..." src="/Your paragraph text (1).jpg" /> </div>
 
           </div>
         </div>
