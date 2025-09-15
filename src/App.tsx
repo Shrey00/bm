@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   ArrowRight,
   Play,
@@ -7,31 +7,33 @@ import {
   Building,
   Star,
   MessageSquare,
-  Globe,
   Bot,
   Palette,
   Smartphone,
   CreditCard,
-  HeadphonesIcon,
   CheckCircle,
-  Zap,
-  Target,
-  TrendingUp,
   Mail,
-  Phone,
   Youtube,
   Instagram,
-  Linkedin
-} from 'lucide-react';
+  Linkedin,
+} from "lucide-react";
 import { motion } from "motion/react";
 // import { useNavigate } from "react-router-dom";
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from "react";
 
 function App() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   // Counter component for animated counting
-  const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: any, duration?: number, suffix: string }) => {
+  const AnimatedCounter = ({
+    end,
+    duration = 2000,
+    suffix = "",
+  }: {
+    end: any;
+    duration?: number;
+    suffix: string;
+  }) => {
     const [count, setCount] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
     const ref: any = useRef();
@@ -43,7 +45,7 @@ function App() {
             setIsVisible(true);
           }
         },
-        { threshold: 0.3 },
+        { threshold: 0.3 }
       );
 
       if (ref.current) {
@@ -66,7 +68,7 @@ function App() {
 
         const easeOutQuart = 1 - Math.pow(1 - progress, 4);
         const currentCount = Math.floor(
-          easeOutQuart * (endValue - startValue) + startValue,
+          easeOutQuart * (endValue - startValue) + startValue
         );
 
         setCount(currentCount);
@@ -136,15 +138,23 @@ function App() {
     <div className="min-h-screen bg-white">
       <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
-          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+          {/* <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
             Bizmate
-          </h1>
-
+          </h1> */}
+          <img src="/logo.jpg" height={"auto"} width={180} alt="KeepConnect" />
           <nav className="hidden md:flex gap-8 text-gray-700 font-medium">
-            <a href="#features" className="hover:text-blue-600 transition">Features</a>
-            <a href="#how-it-works" className="hover:text-blue-600 transition">How It Works</a>
-            <a href="#pricing" className="hover:text-blue-600 transition">Pricing</a>
-            <a href="#testimonials" className="hover:text-blue-600 transition">Contact us</a>
+            <a href="#features" className="hover:text-blue-600 transition">
+              Features
+            </a>
+            <a href="#how-it-works" className="hover:text-blue-600 transition">
+              How It Works
+            </a>
+            <a href="#pricing" className="hover:text-blue-600 transition">
+              Pricing
+            </a>
+            <a href="#testimonials" className="hover:text-blue-600 transition">
+              Contact us
+            </a>
           </nav>
 
           <button
@@ -155,7 +165,6 @@ function App() {
           </button>
         </div>
       </header>
-
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 pt-32 py-20 px-4">
@@ -178,7 +187,9 @@ function App() {
                 </button> */}
                 <button
                   onClick={() => {
-                    document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" });
+                    document
+                      .getElementById("how-it-works")
+                      ?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                 >
@@ -190,8 +201,12 @@ function App() {
                 </button>
               </div>
             </div>
-            <div className="mr-10"><img className="h-auto w-auto object-cover ..." src="/Your paragraph text (1).jpg" /> </div>
-
+            <div className="mr-10">
+              <img
+                className="h-auto w-auto object-cover ..."
+                src="/Your paragraph text (1).jpg"
+              />{" "}
+            </div>
           </div>
         </div>
       </section>
@@ -252,8 +267,12 @@ function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg transition-all duration-500 transform hover:scale-105 hover:bg-gradient-to-r hover:from-fuchsia-300 hover:to-purple-400 hover:text-white">
-
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6"><img src="https://cdn-icons-png.flaticon.com/512/14427/14427133.png" alt="" /></div>
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/14427/14427133.png"
+                  alt=""
+                />
+              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Automated Communication
               </h3>
@@ -572,10 +591,11 @@ function App() {
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentTestimonial
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 w-8"
-                    : "bg-gray-300 hover:bg-gray-400"
-                    }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentTestimonial
+                      ? "bg-gradient-to-r from-blue-600 to-purple-600 w-8"
+                      : "bg-gray-300 hover:bg-gray-400"
+                  }`}
                 />
               ))}
             </div>
@@ -626,7 +646,8 @@ function App() {
             Affordable Pricing for Every Business
           </h2>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            Choose a plan that fits your needs. Simple, transparent pricing with no hidden fees.
+            Choose a plan that fits your needs. Simple, transparent pricing with
+            no hidden fees.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -634,7 +655,8 @@ function App() {
             <div className="bg-white rounded-2xl shadow-lg p-8 border hover:scale-105 transition-transform">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Basic</h3>
               <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
-                ₹499 <span className="text-lg font-medium text-gray-600">/mo</span>
+                ₹499{" "}
+                <span className="text-lg font-medium text-gray-600">/mo</span>
               </p>
               <ul className="text-gray-600 space-y-3 mb-6">
                 <li>✔ Digital Profile</li>
@@ -644,7 +666,8 @@ function App() {
               </ul>
               <button
                 // onClick={() => navigate("/payment-page")}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition">
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition"
+              >
                 Get Started
               </button>
             </div>
@@ -670,7 +693,8 @@ function App() {
             <div className="bg-white rounded-2xl shadow-lg p-8 border hover:scale-105 transition-transform">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Premium</h3>
               <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-red-500 mb-6">
-                ₹1999 <span className="text-lg font-medium text-gray-600">/mo</span>
+                ₹1999{" "}
+                <span className="text-lg font-medium text-gray-600">/mo</span>
               </p>
               <ul className="text-gray-600 space-y-3 mb-6">
                 <li>✔ Everything in Standard</li>
@@ -679,15 +703,15 @@ function App() {
                 <li>✔ Unlimited Campaigns</li>
               </ul>
               <button
-                onClick={() => window.location.href = "/payment-page.jsx"}
-                className="w-full bg-gradient-to-r from-pink-500 to-red-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition">
+                onClick={() => (window.location.href = "/payment-page.jsx")}
+                className="w-full bg-gradient-to-r from-pink-500 to-red-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition"
+              >
                 Get Started
               </button>
             </div>
           </div>
         </div>
       </section>
-
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16 px-4">
@@ -811,7 +835,6 @@ function App() {
         </div>
       </footer>
     </div>
-
   );
 }
 
