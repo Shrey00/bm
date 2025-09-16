@@ -159,7 +159,10 @@ function App() {
             <a href="#pricing" className="hover:text-blue-600 transition">
               Pricing
             </a>
-            <a href="#sales-partners" className="hover:text-blue-600 transition">
+            <a
+              href="#sales-partners"
+              className="hover:text-blue-600 transition"
+            >
               Sales Partners
             </a>
             <a href="#footer" className="hover:text-blue-600 transition">
@@ -169,15 +172,17 @@ function App() {
 
           <Dialog onOpenChange={handleCloseDialog} open={isOpen}>
             <DialogTrigger asChild>
-              <button onClick={()=>{
-                setIsOpen(true)
-                setIsOpen(true)
-
-              }} className="bg-[#E65454] text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+              <button
+                onClick={() => {
+                  setIsOpen(true);
+                  setIsOpen(true);
+                }}
+                className="bg-[#E65454] text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+              >
                 Let's Talk
               </button>
             </DialogTrigger>
-            <DialogConectUsForm setOpen={handleCloseDialog}/>
+            <DialogConectUsForm setOpen={handleCloseDialog} />
           </Dialog>
         </div>
       </header>
@@ -216,7 +221,6 @@ function App() {
                 >
                   Get Started
                 </button>
-            
               </div>
             </div>
             <div className="mr-md-10 mr-0">
@@ -279,7 +283,9 @@ function App() {
               Powerful Features for Your Business
             </h2>
             <p className="text-xl text-gray-600">
-              From growing businesses to top enterprises, 5K+ rely on <span className="text-red-500 italic font-bold">KeepConnect</span> to simplify and optimize communication. Join them now!
+              From growing businesses to top enterprises, 5K+ rely on{" "}
+              <span className="text-red-500 italic font-bold">KeepConnect</span>{" "}
+              to simplify and optimize communication. Join them now!
             </p>
           </div>
 
@@ -295,7 +301,8 @@ function App() {
                 Automated Smart Communication
               </h3>
               <p className="text-gray-600">
-                Automated post-call SMS and WhatsApp updates to secure timely follow-ups and minimize lost leads.
+                Automated post-call SMS and WhatsApp updates to secure timely
+                follow-ups and minimize lost leads.
               </p>
             </div>
 
@@ -313,14 +320,14 @@ function App() {
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6">
-                <Bot className="text-white" size={32} />
+              <div className="w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center mb-6">
+                <MessageSquare className="text-white" size={32} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 WhatsApp Automation
               </h3>
               <p className="text-gray-600">
-                Chatbot and bulk messaging to handle customer queries 24/7.
+                FAQ handling, lead generation, and services menu automation
               </p>
             </div>
 
@@ -351,14 +358,15 @@ function App() {
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <div className="w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center mb-6">
-                <MessageSquare className="text-white" size={32} />
+              <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6">
+                <Bot className="text-white" size={32} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                24/7 WhatsApp Chatbot
+                Social Media Automated Post
               </h3>
               <p className="text-gray-600">
-                FAQ handling, lead generation, and services menu automation.
+                Share business updates with logo, images & greetings across
+                social platforms in one click.
               </p>
             </div>
           </div>
