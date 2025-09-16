@@ -148,7 +148,10 @@ function App() {
           {/* <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-[#E65454]">
             Bizmate
           </h1> */}
-          <img src="/logo.jpg" height={"auto"} width={180} alt="KeepConnect" />
+          <a href="/">
+             <img src="/logo.jpg" height={"auto"} width={180} alt="KeepConnect" />
+          </a>
+         
           <nav className="hidden md:flex gap-8 text-gray-700 font-medium">
             <a href="#features" className="hover:text-blue-600 transition">
               Features

@@ -12,14 +12,14 @@ const DialogConectUsForm = ({ setOpen }: { setOpen: () => void }) => {
   const [connectWithUsFormData, setConnectWithUsFormData] = useState({
     name: "",
     email: "",
-    contact: "",
+    message: "",
   });
   // const navigate = useNavigate();
   function handleSubmit() {
     if (
       !connectWithUsFormData.name.trim().length ||
       !connectWithUsFormData.email.trim().length ||
-      !connectWithUsFormData.contact.trim().length
+      !connectWithUsFormData.message.trim().length
     ) {
         toast("Error", {
          description: "Please fill all the fields",
@@ -34,7 +34,7 @@ const DialogConectUsForm = ({ setOpen }: { setOpen: () => void }) => {
     setConnectWithUsFormData({
       name: "",
       email: "",
-      contact: "",
+      message: "",
     });
   }
   function handleFormChange(e: any) {
@@ -48,7 +48,7 @@ const DialogConectUsForm = ({ setOpen }: { setOpen: () => void }) => {
   return (
     <DialogContent>
       <DialogHeader>
-        <DialogTitle>Connect with us</DialogTitle>
+        <DialogTitle>Connect us</DialogTitle>
       </DialogHeader>
       <div>
         <Label>Name</Label>
@@ -72,13 +72,13 @@ const DialogConectUsForm = ({ setOpen }: { setOpen: () => void }) => {
         />
       </div>
       <div>
-        <Label>Contact</Label>
+        <Label>Message</Label>
         <Input
-          name="contact"
+          name="message"
           type="text"
           className="mt-1"
           onChange={handleFormChange}
-          value={connectWithUsFormData.contact}
+          value={connectWithUsFormData.message}
         />
       </div>
       <DialogFooter>
