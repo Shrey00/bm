@@ -26,6 +26,9 @@ import DialogConectUsForm from "./components/dialog-connect-from";
 import { Toaster } from "./components/ui/sonner";
 import { useState, useRef, useEffect } from "react";
 // import { Label } from "@radix-ui/react-label";
+import BusinessModal from "./BusinessInfoModal";
+import TrustedPartnersCarousel from "../src/TrustedPartnersCarousel";
+
 
 function App() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -141,6 +144,11 @@ function App() {
       gradient: "from-indigo-500 to-blue-500",
     },
   ];
+
+  //  BusinessInfoModelOpen
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
   return (
     <div className="min-h-screen bg-white">
       <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
@@ -149,9 +157,9 @@ function App() {
             Bizmate
           </h1> */}
           <a href="/">
-             <img src="/logo.jpg" height={"auto"} width={180} alt="KeepConnect" />
+            <img src="/logo.jpg" height={"auto"} width={180} alt="KeepConnect" />
           </a>
-         
+
           <nav className="hidden md:flex gap-8 text-gray-700 font-medium">
             <a href="#features" className="hover:text-blue-600 transition">
               Features
@@ -560,6 +568,10 @@ function App() {
         </div>
       </section>
 
+      <div>
+        <TrustedPartnersCarousel />
+      </div>
+
       {/* Testimonials Section with Carousel */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -619,11 +631,10 @@ function App() {
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial
-                      ? "bg-[#E65454] w-8"
-                      : "bg-gray-300 hover:bg-gray-400"
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentTestimonial
+                    ? "bg-[#E65454] w-8"
+                    : "bg-gray-300 hover:bg-gray-400"
+                    }`}
                 />
               ))}
             </div>
@@ -701,7 +712,7 @@ function App() {
                 </li>
               </ul>
               <button
-                // onClick={() => navigate("/payment-page")}
+                onClick={() => setIsModalOpen(true)}
                 className="w-full bg-[#E65454] text-white py-3 rounded-lg font-semibold hover:shadow-lg transition"
               >
                 Get Started
@@ -728,7 +739,10 @@ function App() {
                   <Check color={"#E65454"} /> Bulk WhatsApp Messaging
                 </li>
               </ul>
-              <button className="w-full bg-white text-[#E65454] border-[1px] border-red-500 py-3 rounded-lg font-semibold hover:shadow-xl transition">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="w-full bg-[#E65454] text-white py-3 rounded-lg font-semibold hover:shadow-lg transition"
+              >
                 Get Started
               </button>
             </div>
@@ -755,7 +769,7 @@ function App() {
                 </li>
               </ul>
               <button
-                onClick={() => (window.location.href = "/payment-page.jsx")}
+                onClick={() => setIsModalOpen(true)}
                 className="w-full bg-[#E65454] text-white py-3 rounded-lg font-semibold hover:shadow-lg transition"
               >
                 Get Started
@@ -763,134 +777,114 @@ function App() {
             </div>
           </div>
         </div>
+
+      {/* BusinessModalOpen */}
+      <BusinessModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16 px-4" id="footer">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                <img
-                  src="/logo.jpg"
-                  height={"auto"}
-                  width={"260"}
-                  alt="brand logo"
-                />
-              </h3>
-              <p className="text-gray-400 mb-6">
-                Empowering businesses with digital branding solutions that drive
-                growth and success.
+      <footer className="bg-gray-900 text-white py-16 px-4 mt-12" id="footer">
+        <div className="max-w-7xl mx-auto ">
+          <div className="grid md:grid-cols-4 gap-8  mr-7 items-start ">
+
+            {/* Logo & About */}
+            <div className="flex flex-col gap-4 mr-10">
+              <div className="flex flex-col gap-4 items-start">
+                <img src="/logo.svg" alt="brand logo" className="w-30 h-20" />
+                <img src="/MadeinIndia.svg" alt="Made in India logo" className="w-32 h-22" />
+              </div>
+
+              <p className="text-gray-300 mt-4 text-lg leading-relaxed">
+                Empowering businesses with digital branding solutions that drive growth and success.
               </p>
-              <div className="flex gap-4">
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-                >
-                  <Youtube size={20} />
+
+              <div className="flex gap-3 mt-4">
+                <a href="#" className="w-9 h-9 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                  <Youtube size={18} />
                 </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-[#E65454] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-                >
-                  <Instagram size={20} />
+                <a href="#" className="w-9 h-9 bg-[#E65454] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                  <Instagram size={18} />
                 </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-                >
-                  <Linkedin size={20} />
+                <a href="#" className="w-9 h-9 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                  <Linkedin size={18} />
                 </a>
               </div>
             </div>
 
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Press
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Blog
-                  </a>
-                </li>
-              </ul>
+            {/* Company & Support */}
+            <div className="grid grid-cols-2 gap-6 ml-13">
+              {/* Company */}
+              <div className="flex flex-col gap-3">
+                <h4 className="text-xl font-semibold mb-3 mt-4 ml-">Company</h4>
+                <ul className="space-y-1 text-gray-300 text-lg">
+                  <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                </ul>
+              </div>
+
+              {/* Support */}
+              <div className="flex flex-col gap-3 ml-5">
+                <h4 className="text-xl font-semibold mb-3 mt-4">Support</h4>
+                <ul className="space-y-1 text-gray-300 text-lg">
+                  <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">API Docs</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
+                </ul>
+              </div>
             </div>
 
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Help Center
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    API Docs
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Status
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Contact</h4>
-              <div className="space-y-3 text-gray-400">
-                <div className="flex items-center gap-3">
-                  <Mail size={16} />
-                  <span>support@keepconnect.com</span>
+            {/* Contact */}
+            <div className="flex flex-col gap-3 ml-10">
+              <h4 className="text-xl font-semibold mb-3 mt-4 ">Contact</h4>
+              <p className="text-lg">Sales: +91XXXXXXXXXX</p>
+              <p className="text-lg">Customer Care: +91XXXXXXXXXX</p>
+              <div className="space-y-2 text-gray-300">
+                <div className="flex items-center gap-2">
+                  <Mail size={20} />
+                  <span className="text-lg">support@KeepConnect.com</span>
                 </div>
-                <div className="text-sm">
+                <div>
                   <p>Business Hours:</p>
-                  <p>Mon-Fri: 9AM-6PM IST</p>
+                  <p>Mon-Fri: 9AM - 6PM IST</p>
                 </div>
               </div>
             </div>
+
+            {/* Developed By */}
+            <div className="flex flex-col gap-3 ml-12">
+              <h4 className="text-xl font-semibold mb-3 mt-4">Developed by</h4>
+              <p className="text-gray-200 font-semibold text-lg">VisionTech Business Solutions Pvt. Ltd.</p>
+              <p className="text-gray-300 text-base">Address: XXXXXXXXX</p>
+              <p className="text-gray-300 text-base">CIN: XXXXXXXXXXXXX</p>
+              <p className="text-gray-300 text-base">GST: XXXXXXXXXXXXX</p>
+            </div>
+
+
           </div>
 
-          <div className="border-t border-gray-800 mt-12 pt-8">
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-800 mt-10 pt-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-400 text-sm">
                 © 2025 KeepConnect. All rights reserved.
               </p>
               <div className="flex gap-6 text-sm text-gray-400">
-                <a href="#" className="hover:text-white transition-colors">
-                  Terms of Service
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  Cookie Policy
-                </a>
+                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
               </div>
             </div>
           </div>
         </div>
       </footer>
+
+     
+
+
       <Toaster />
     </div>
   );
