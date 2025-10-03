@@ -55,7 +55,6 @@ export default function BusinessInfoModal({ isOpen, onClose }: BusinessInfoModal
                 id="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                placeholder="Billu Dilwala"
                 className="pr-10"
               />
               <User className="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
@@ -70,7 +69,6 @@ export default function BusinessInfoModal({ isOpen, onClose }: BusinessInfoModal
                 id="shopName"
                 value={formData.shopName}
                 onChange={handleChange}
-                placeholder="Billu Chai Shop"
                 className="pr-10"
               />
               <Store className="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
@@ -87,7 +85,6 @@ export default function BusinessInfoModal({ isOpen, onClose }: BusinessInfoModal
                   type="tel"
                   value={formData.number}
                   onChange={handleChange}
-                  placeholder="+91 87656 76767"
                   className="pr-10"
                 />
                 <Phone className="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
@@ -102,7 +99,6 @@ export default function BusinessInfoModal({ isOpen, onClose }: BusinessInfoModal
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Email address"
                   className="pr-10"
                 />
                 <Mail className="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
