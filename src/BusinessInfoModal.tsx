@@ -109,7 +109,7 @@ export default function BusinessInfoModal({ isOpen, onClose }: BusinessInfoModal
           <DialogFooter>
             <Button
               type="submit"
-              className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg py-2"
+              className="w-full"
             >
               Submit
             </Button>
